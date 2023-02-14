@@ -1,8 +1,19 @@
+/*
+ * @Author: LQ
+ * @Date: 2023-02-14 09:34:29
+ * @LastEditors: LQ
+ * @LastEditTime: 2023-02-14 09:53:43
+ * @FilePath: \lang-python-scm\src\python.ts
+ * @Description:
+ *
+ * Copyright (c) 2023 by LQ/量迅, All Rights Reserved.
+ */
 import {parser} from "@lezer/python"
 import {SyntaxNode} from "@lezer/common"
-import {delimitedIndent, indentNodeProp, TreeIndentContext, 
+import {delimitedIndent, indentNodeProp, TreeIndentContext,
         foldNodeProp, foldInside, LRLanguage, LanguageSupport} from "@codemirror/language"
 import {globalCompletion, localCompletionSource} from "./complete"
+import { Completion } from "@codemirror/autocomplete"
 export {globalCompletion, localCompletionSource}
 
 function indentBody(context: TreeIndentContext, node: SyntaxNode) {
@@ -26,8 +37,8 @@ function indentBody(context: TreeIndentContext, node: SyntaxNode) {
 /// A language provider based on the [Lezer Python
 /// parser](https://github.com/lezer-parser/python), extended with
 /// highlighting and indentation information.
-export const pythonLanguage = LRLanguage.define({
-  name: "python",
+export const pythonScmLanguage = LRLanguage.define({
+  name: "pythonScm",
   parser: parser.configure({
     props: [
       indentNodeProp.add({
@@ -40,7 +51,7 @@ export const pythonLanguage = LRLanguage.define({
         "String FormatString": () => null,
         Script: context => {
           if (context.pos + /\s*/.exec(context.textAfter)![0].length >= context.node.to) {
-            let endBody = null
+            let endBody:SyntaxNode = null as never as SyntaxNode
             for (let cur: SyntaxNode | null = context.node, to = cur.to;;) {
               cur = cur.lastChild
               if (!cur || cur.to != to) break
@@ -72,9 +83,9 @@ export const pythonLanguage = LRLanguage.define({
 })
 
 /// Python language support.
-export function python() {
-  return new LanguageSupport(pythonLanguage, [
-    pythonLanguage.data.of({autocomplete: localCompletionSource}),
-    pythonLanguage.data.of({autocomplete: globalCompletion}),
-  ])
+export function pythonScm(completions:Completion[]) {
+  return new LanguageSupport(pythonScmLanguage, [
+    pythonScmLanguage.data.of({ autocomplete: localCompletionSource }),
+    pythonScmLanguage.data.of({ autocomplete: globalCompletion(completions) }),
+  ]);
 }

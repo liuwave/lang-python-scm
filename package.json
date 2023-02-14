@@ -1,7 +1,7 @@
 {
-  "name": "@codemirror/lang-python",
-  "version": "6.1.1",
-  "description": "Python language support for the CodeMirror code editor",
+  "name": "@codemirror/lang-python-scm",
+  "version": "1.0.0",
+  "description": "Python SCM language support for the CodeMirror code editor",
   "scripts": {
     "test": "cm-runtests",
     "prepare": "cm-buildhelper src/python.ts"
@@ -11,9 +11,8 @@
     "code"
   ],
   "author": {
-    "name": "Marijn Haverbeke",
-    "email": "marijn@haverbeke.berlin",
-    "url": "http://marijnhaverbeke.nl"
+    "name": "liuwave",
+    "email": "liuwave@qq.com"
   },
   "type": "module",
   "main": "dist/index.cjs",
