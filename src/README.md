@@ -1,3 +1,13 @@
+<!--
+ * @Author: LQ
+ * @Date: 2023-02-14 09:34:29
+ * @LastEditors: LQ
+ * @LastEditTime: 2023-02-14 09:59:29
+ * @FilePath: \lang-python-scm\src\README.md
+ * @Description:
+ *
+ * Copyright (c) 2023 by LQ/量迅, All Rights Reserved.
+-->
 <!-- NOTE: README.md is generated from src/README.md -->
 
 
@@ -26,6 +36,6 @@ to communication around the project.
 
 # API Reference
 
-@python
+@pythonScm
 
-@pythonLanguage
+@pythonScmLanguage
