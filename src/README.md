@@ -2,7 +2,7 @@
  * @Author: LQ
  * @Date: 2023-02-14 09:34:29
  * @LastEditors: LQ
- * @LastEditTime: 2023-02-14 09:59:29
+ * @LastEditTime: 2023-02-15 09:05:16
  * @FilePath: \lang-python-scm\src\README.md
  * @Description:
  *
@@ -13,7 +13,7 @@
 
 # SCM 自定义语言包
 
-参考python
+参考python ，生成的自定义语言包
 
 # @codemirror/lang-python [![NPM version](https://img.shields.io/npm/v/@codemirror/lang-python.svg)](https://www.npmjs.org/package/@codemirror/lang-python)
 
