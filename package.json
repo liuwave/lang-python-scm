@@ -1,6 +1,6 @@
 {
-  "name": "@codemirror/lang-python-scm",
-  "version": "1.0.0",
+  "name": "lang-python-scm",
+  "version": "1.0.1",
   "description": "Python SCM language support for the CodeMirror code editor",
   "scripts": {
     "test": "cm-runtests",
